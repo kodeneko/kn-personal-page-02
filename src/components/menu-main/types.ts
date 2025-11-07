@@ -1,15 +1,15 @@
 import type { ColorTheme } from '../../models/ColorTheme';
 import type { Langs } from '../../models/Langs';
-import type { MainMenuOpt } from '../../models/MainMenuOpt';
+import type { MenuOpt } from '../../models/MenuOpt';
 
 type MenuMainProps = {
-  optList: MainMenuOpt[];
+  optList: MenuOpt[];
   langList: Langs[];
   colorList: ColorTheme[];
-  optSel: MainMenuOpt['id'];
+  optSel: MenuOpt['id'];
   langSel: Langs;
   colorSel: ColorTheme;
-  changeOpt: (opt: MainMenuOpt['id']) => void;
+  changeOpt: (opt: MenuOpt['id']) => void;
   changeLang: (lang: Langs) => void;
   changeColor: (color: ColorTheme) => void;
 };

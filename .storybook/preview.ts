@@ -1,4 +1,5 @@
 import '../src/index.less';
+import '../src/fontawesome.ts';
 
 import type { Preview } from '@storybook/react-vite';
 

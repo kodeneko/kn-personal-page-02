@@ -4,7 +4,7 @@ import MenuBase from '../../components/menu-main/menu-base';
 import { mainMenuList } from '../../globals/menu';
 import { ColorThemeList } from '../../models/ColorTheme';
 import { LangList } from '../../models/Langs';
-import type { MainMenuOpt } from '../../models/MainMenuOpt';
+import type { MenuOpt } from '../../models/MenuOpt';
 
 const meta = {
   title: 'Personal Page/MenuBase',
@@ -24,7 +24,7 @@ export const Default: Story = {
     optSel: mainMenuList[0].id,
     langSel: LangList[0],
     colorSel: ColorThemeList[0],
-    changeOpt: (opt: MainMenuOpt['id']) => { console.log('Menu Opt changed to', opt); },
+    changeOpt: (opt: MenuOpt['id']) => { console.log('Menu Opt changed to', opt); },
     changeLang: (lang: string) => { console.log('Language changed to', lang); },
     changeColor: (color: string) => { console.log('Color changed to', color); },
   },
