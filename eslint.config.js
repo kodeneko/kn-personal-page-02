@@ -23,6 +23,7 @@ export default defineConfig([
     },
   },
   tseslint.configs.recommended,
+  { rules: { ...tseslint.configs.recommended.rules, 'no-console': 'off' } },
   {
     ...pluginReact.configs.flat.recommended,
     rules: {

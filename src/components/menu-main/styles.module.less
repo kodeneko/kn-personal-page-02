@@ -1,0 +1,102 @@
+.cont {
+  display: flex;
+  align-items: center;
+  background-color: var(--cDark);
+  color: var(--cLight);
+  padding: 0.5rem 1rem;
+  border-radius: 3.2rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  .lang {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    .optSet {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+
+      .opt {
+        color: var(--cMain);
+        text-transform: uppercase;
+      }
+
+      .opt.sel {
+        color: var(--cLight);
+        font-weight: bold;
+      }
+    }
+  }
+
+  .color {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    .optSet {
+      display: flex;
+      align-items: center;
+
+      .opt {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.right {
+  flex-grow: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-transform: uppercase;
+
+    .ele {
+      color: var(--cLight);
+      cursor: pointer;
+    }
+
+    .ele.sel {
+      color: var(--cSecond);
+    }
+  }
+}
+
+.colorear(@color) {
+  color: @color;
+}
+
+.purple {
+  .colorear(#B03DFD);
+}
+
+.orange {
+  .colorear(#FA7E02);
+}
+
+.green {
+  .colorear(#18D968);
+}
+
+.blue {
+  .colorear(#319BFF);
+}
