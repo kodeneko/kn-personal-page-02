@@ -22,6 +22,14 @@ export default defineConfig([
       'newline-per-chained-call': ['error', { ignoreChainWithDepth: 1 }],
     },
   },
+  tseslint.configs.recommended,
+  {
+    ...pluginReact.configs.flat.recommended,
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
   {
     plugins: { '@stylistic': stylistic },
     rules: {
@@ -42,16 +50,24 @@ export default defineConfig([
       }],
       '@stylistic/object-curly-newline': ['error', {
         ObjectExpression: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
         ObjectPattern: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
         ImportDeclaration: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
         ExportDeclaration: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
       }],
       '@stylistic/array-element-newline': ['error', { 'minItems': 3 }],
@@ -65,14 +81,7 @@ export default defineConfig([
       'simple-import-sort/exports': 'error',
     },
   },
-  tseslint.configs.recommended,
-  {
-    ...pluginReact.configs.flat.recommended,
-    rules: {
-      ...pluginReact.configs.flat.recommended.rules,
-      'react/react-in-jsx-scope': 'off',
-    },
-  },
+
   {
     files: ['**/*.json'],
     plugins: { json },
@@ -91,4 +100,5 @@ export default defineConfig([
     language: 'css/css',
     extends: ['css/recommended'],
   },
+  storybook.configs['flat/recommended'],
 ]);
