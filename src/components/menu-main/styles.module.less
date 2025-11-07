@@ -29,11 +29,17 @@
       .opt {
         color: var(--cMain);
         text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s;
       }
 
       .opt.sel {
         color: var(--cLight);
         font-weight: bold;
+      }
+
+      .opt:hover:not(.opt.sel) {
+        transform: translate(0.05rem, -0.05rem);
       }
     }
   }
@@ -53,6 +59,12 @@
 
       .opt {
         font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .opt:hover {
+        transform: translate(0.05rem, -0.05rem);
       }
     }
   }
@@ -73,9 +85,11 @@
     .ele {
       color: var(--cLight);
       cursor: pointer;
+      transition: all 0.2s;
     }
 
-    .ele.sel {
+    .ele.sel,
+    .ele:hover {
       color: var(--cSecond);
     }
   }
@@ -99,4 +113,32 @@
 
 .blue {
   .colorear(#319BFF);
+}
+
+@media all and (max-width: 800px) {
+  .cont {
+    flex-direction: column;
+    border-radius: 0;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .left {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .right {
+    justify-content: center;
+    width: 100%;
+
+    .list {
+      width: 100%;
+      padding: 2rem;
+      border-top: 0.1rem solid var(--cLight);
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
 }

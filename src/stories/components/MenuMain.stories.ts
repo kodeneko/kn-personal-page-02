@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import MenuMain from '../../components/menu-main';
+import MenuBase from '../../components/menu-main/menu-base';
 import { mainMenuList } from '../../globals/menu';
 import { ColorThemeList } from '../../models/ColorTheme';
 import { LangList } from '../../models/Langs';
 import type { MainMenuOpt } from '../../models/MainMenuOpt';
 
 const meta = {
-  title: 'Personal Page/MenuMain',
-  component: MenuMain,
+  title: 'Personal Page/MenuBase',
+  component: MenuBase,
   tags: ['autodocs'],
-} satisfies Meta<typeof MenuMain>;
+} satisfies Meta<typeof MenuBase>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
