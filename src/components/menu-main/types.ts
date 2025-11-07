@@ -9,6 +9,7 @@ type MenuMainProps = {
   optSel: MainMenuOpt['id'];
   langSel: Langs;
   colorSel: ColorTheme;
+  changeOpt: (opt: MainMenuOpt['id']) => void;
   changeLang: (lang: Langs) => void;
   changeColor: (color: ColorTheme) => void;
 };

@@ -15,6 +15,7 @@ const MenuMain: React.FC<MenuMainProps> = ({
   optSel,
   langSel = 'es',
   colorSel = 'purple',
+  changeOpt,
   changeLang,
   changeColor,
 }) => {
@@ -25,7 +26,13 @@ const MenuMain: React.FC<MenuMainProps> = ({
           <FontAwesomeIcon className={styles.icon} icon={faGlobe} />
           <div className={styles.optSet}>
             {langList.map(l =>
-              <div key={l} className={clsx(styles.opt, 'labelMd', l === langSel && styles.sel)}>{l}</div>,
+              <div
+                key={l}
+                className={clsx(styles.opt, 'labelMd', l === langSel && styles.sel)}
+                onClick={() => changeLang(l)}
+              >
+                {l}
+              </div>,
             )}
           </div>
         </div>
@@ -33,7 +40,12 @@ const MenuMain: React.FC<MenuMainProps> = ({
           <FontAwesomeIcon className={styles.icon} icon={faPaintRoller} />
           <div className={styles.optSet}>
             {colorList.map(c =>
-              <FontAwesomeIcon className={clsx(styles.opt, styles[c])} key={c} icon={faCircle} />,
+              <FontAwesomeIcon
+                className={clsx(styles.opt, styles[c])}
+                key={c}
+                onClick={() => changeColor(c)}
+                icon={faCircle}
+              />,
             )}
           </div>
         </div>
@@ -42,7 +54,13 @@ const MenuMain: React.FC<MenuMainProps> = ({
         <ul className={styles.list}>
           {optList.map(o =>
             <li key={o.id}>
-              <a className={clsx(styles.ele, 'labelMd', o.id === optSel && styles.sel)} href={o.path}>{o.id}</a>
+              <a
+                className={clsx(styles.ele, 'labelMd', o.id === optSel && styles.sel)}
+                href={o.path}
+                onClick={() => changeOpt(o.id)}
+              >
+                {o.id}
+              </a>
             </li>,
           )}
         </ul>
