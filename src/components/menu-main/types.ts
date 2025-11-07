@@ -3,12 +3,12 @@ import type { Langs } from '../../models/Langs';
 import type { MainMenuOpt } from '../../models/MainMenuOpt';
 
 type MenuMainProps = {
-  menu: MainMenuOpt[];
+  optList: MainMenuOpt[];
   langList: Langs[];
-  menuColor: ColorTheme[];
+  colorList: ColorTheme[];
   optSel: MainMenuOpt['id'];
-  lang: Langs;
-  color: ColorTheme;
+  langSel: Langs;
+  colorSel: ColorTheme;
   changeLang: (lang: Langs) => void;
   changeColor: (color: ColorTheme) => void;
 };

@@ -17,12 +17,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    menu: mainMenuList.slice(0, 2),
+    optList: mainMenuList.slice(0, 2),
     langList: LangList,
-    menuColor: ColorThemeList,
+    colorList: ColorThemeList,
     optSel: mainMenuList[0].id,
-    lang: LangList[0],
-    color: ColorThemeList[0],
+    langSel: LangList[0],
+    colorSel: ColorThemeList[0],
     changeLang: (lang: string) => { console.log('Language changed to', lang); },
     changeColor: (color: string) => { console.log('Color changed to', color); },
   },
