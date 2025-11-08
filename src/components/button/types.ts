@@ -1,3 +1,3 @@
-type ButtonProps = React.HTMLAttributes<HTMLButtonElement>;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type { ButtonProps };
