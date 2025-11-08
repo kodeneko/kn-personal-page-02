@@ -3,6 +3,8 @@ import type { Langs } from '../../models/Langs';
 import type { MenuOpt } from '../../models/MenuOpt';
 
 type MenuMainProps = {
+  isMobile?: boolean;
+  onClose?: () => void;
   optList: MenuOpt[];
   langList: Langs[];
   colorList: ColorTheme[];
