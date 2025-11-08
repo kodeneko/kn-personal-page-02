@@ -7,13 +7,14 @@ import styles from './styles.module.less';
 import type { CardProps } from './types';
 
 const Card: React.FC<CardProps> = ({
+  compact,
   pic,
-  title,
-  body,
-  actions,
+  title = '',
+  body = '',
+  actions = [],
 }) => {
   return (
-    <div className={styles.cont}>
+    <div className={clsx(styles.cont, compact && styles.sm)}>
       <img className={styles.pic} src={pic} />
       <div className={styles.desc}>
         <h3 className={clsx(styles.title, 'h3Head')}>{title}</h3>

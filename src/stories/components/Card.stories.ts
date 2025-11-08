@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    compact: false,
     pic,
     title: 'Lorem Ipsum',
     body: 'Lorem ipsum lorem amet dolor etsme res',
@@ -36,5 +37,13 @@ export const Default: Story = {
         icon: 'fa-solid fa-up-right-from-square',
       },
     ],
+  },
+};
+
+export const Compact: Story = {
+  args: {
+    compact: true,
+    pic,
+    body: 'Lorem ipsum lorem amet dolor etsme res',
   },
 };
