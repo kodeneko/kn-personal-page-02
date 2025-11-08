@@ -1,0 +1,40 @@
+.cont {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--cDark);
+  color: var(--cLight);
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shaBlack);
+}
+
+.mov {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  animation: scrollTeletipo 50s linear infinite;
+  padding: 1rem;
+  gap: 2rem;
+
+  .tag {
+    display: flex;
+    gap: 0.5rem;
+
+    .icon {
+      font-size: 1rem;
+      color: var(--cSecond);
+    }
+
+    .label {}
+  }
+}
+
+@keyframes scrollTeletipo {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

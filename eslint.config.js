@@ -1,3 +1,4 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import css from '@eslint/css';
 import js from '@eslint/js';
 import json from '@eslint/json';
@@ -5,6 +6,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 import pluginReact from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import storybook from 'eslint-plugin-storybook';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -18,6 +20,15 @@ export default defineConfig([
       'no-unused-vars': 'warn',
       'no-console': 'warn',
       'newline-per-chained-call': ['error', { ignoreChainWithDepth: 1 }],
+    },
+  },
+  tseslint.configs.recommended,
+  { rules: { ...tseslint.configs.recommended.rules, 'no-console': 'off' } },
+  {
+    ...pluginReact.configs.flat.recommended,
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
     },
   },
   {
@@ -40,16 +51,24 @@ export default defineConfig([
       }],
       '@stylistic/object-curly-newline': ['error', {
         ObjectExpression: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
         ObjectPattern: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
         ImportDeclaration: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
         ExportDeclaration: {
-          minProperties: 3, multiline: true, consistent: true,
+          minProperties: 3,
+          multiline: true,
+          consistent: false,
         },
       }],
       '@stylistic/array-element-newline': ['error', { 'minItems': 3 }],
@@ -63,8 +82,7 @@ export default defineConfig([
       'simple-import-sort/exports': 'error',
     },
   },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+
   {
     files: ['**/*.json'],
     plugins: { json },
@@ -83,4 +101,5 @@ export default defineConfig([
     language: 'css/css',
     extends: ['css/recommended'],
   },
+  storybook.configs['flat/recommended'],
 ]);
