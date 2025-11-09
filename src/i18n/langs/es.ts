@@ -30,6 +30,7 @@ export default {
     desc: 'A decade dedicated to develope world. My multidisciplinar aproach permit me train several skill and branches. I was working in projects from enterprises such as Odigeo, Inditext or Telefonica.',
   },
   skills: {
+    title: 'My Skills',
     opt: {
       design: 'Design',
       frontend: 'Front-End',
