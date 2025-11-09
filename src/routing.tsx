@@ -2,7 +2,7 @@ import type React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import MainLayout from './layout/main';
-import HomeView from './views/HomeView';
+import HomeView from './views/home/HomeView';
 
 const Routing: React.FC = () => {
   return (
