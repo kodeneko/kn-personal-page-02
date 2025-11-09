@@ -93,6 +93,44 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .cont {
+    flex-direction: column;
+  }
+
+  .left {
+
+    .salute,
+    .iam,
+    .job {
+      text-align: center;
+    }
+
+    .iam {
+      font-size: 2.7rem;
+      padding-bottom: 1rem;
+    }
+
+    .desc {
+      display: none;
+    }
+  }
+
+  .right {
+
+    .pic,
+    .text {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
 @keyframes clinking {
   0% {
     transform: rotate(-4deg);
