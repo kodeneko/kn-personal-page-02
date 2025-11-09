@@ -8,14 +8,14 @@ import SkillsSec from './components/skills';
 import WelcomeSec from './components/welcome';
 
 const HomeView: React.FC = () => (
-  <div>
+  <>
     <WelcomeSec />
     <ServicesSec />
     <BioSec />
     <SkillsSec />
     <PortfolioSec />
     <ContactSec />
-  </div>
+  </>
 );
 
 export default HomeView;
