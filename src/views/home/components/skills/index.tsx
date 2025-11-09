@@ -6,8 +6,7 @@ import type { SkillsSecProps } from './types';
 const SkillsSec: React.FC<SkillsSecProps> = () => {
   return (
     <div className={styles.cont}>
-      <div></div>
-      <div></div>
+      Skill
     </div>
   );
 };

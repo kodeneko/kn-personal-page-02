@@ -6,8 +6,7 @@ import type { ContactSecProps } from './types';
 const ContactSec: React.FC<ContactSecProps> = () => {
   return (
     <div className={styles.cont}>
-      <div></div>
-      <div></div>
+      Contact
     </div>
   );
 };

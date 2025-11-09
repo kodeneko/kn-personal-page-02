@@ -6,8 +6,7 @@ import type { WelcomeSecProps } from './types';
 const WelcomeSec: React.FC<WelcomeSecProps> = () => {
   return (
     <div className={styles.cont}>
-      <div></div>
-      <div></div>
+      Welcome
     </div>
   );
 };

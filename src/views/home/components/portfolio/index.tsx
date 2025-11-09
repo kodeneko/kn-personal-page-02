@@ -6,8 +6,7 @@ import type { PortfolioSecProps } from './types';
 const PortfolioSec: React.FC<PortfolioSecProps> = () => {
   return (
     <div className={styles.cont}>
-      <div></div>
-      <div></div>
+      Portfolio
     </div>
   );
 };
