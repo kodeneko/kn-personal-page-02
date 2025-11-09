@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
+import FooterMain from '../../components/footer-main';
 import MenuMain from '../../components/menu-main';
 import { mainMenuList } from '../../globals/menu';
 import { ColorThemeList } from '../../models/ColorTheme';
@@ -23,10 +24,10 @@ const MainLayout: React.FC = () => (
           changeColor={() => console.log('Click change color')}
         />
       </header>
-      <main>
+      <main className={styles.main}>
         <Outlet></Outlet>
       </main>
-      <footer>Footer</footer>
+      <FooterMain />
     </div>
   </div>
 );
