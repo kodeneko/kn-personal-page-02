@@ -1,0 +1,108 @@
+.cont {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1rem 4rem 1rem;
+}
+
+.left {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+  .salute {
+    color: var(--cLight);
+    margin-bottom: 1rem;
+  }
+
+  .iam {
+    color: var(--cDark);
+    text-shadow: var(--shaBlack);
+  }
+
+  .job {
+    font-size: 1.6rem;
+    color: var(--cLight);
+  }
+
+  .desc {
+    margin-top: 1rem;
+    color: var(--cDark);
+  }
+}
+
+.right {
+  flex: 1 1 0;
+  position: relative;
+
+  .pic {
+    border-radius: 0.4rem;
+    width: 17rem;
+    height: 17rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    filter: grayscale(100%);
+    box-shadow: var(--shaBlack);
+    transform: rotate(-4deg);
+  }
+
+  .text {
+    position: absolute;
+    bottom: -2rem;
+    right: 14rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .label {
+      border: none;
+      width: 8rem;
+      box-shadow: var(--shaBlack);
+      border-radius: 0.2rem;
+      padding: 0.4rem 0.5rem;
+      background-color: var(--cDark);
+      color: var(--cLight);
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      /*
+      animation-name: clinking;
+      animation-delay: 3s;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      */
+    }
+
+    .label.t01 {
+      transform: rotate(-4deg);
+    }
+
+    .label.t02 {
+      transform: rotate(4deg);
+    }
+
+    .label:hover {
+      transform: scale(1.1);
+    }
+
+  }
+}
+
+@keyframes clinking {
+  0% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(-4deg);
+  }
+}

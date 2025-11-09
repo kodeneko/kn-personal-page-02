@@ -11,7 +11,7 @@ import styles from './styles.module.less';
 const MainLayout: React.FC = () => (
   <div className={styles.mainLayout}>
     <div className={styles.frame}>
-      <header>
+      <header className={styles.header}>
         <MenuMain
           optList={mainMenuList}
           langList={LangList}
