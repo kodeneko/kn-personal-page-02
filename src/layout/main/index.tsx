@@ -10,25 +10,27 @@ import styles from './styles.module.less';
 
 const MainLayout: React.FC = () => (
   <div className={styles.mainLayout}>
-    <div className={styles.frame}>
-      <header className={styles.header}>
-        <MenuMain
-          optList={mainMenuList}
-          langList={LangList}
-          colorList={ColorThemeList}
-          optSel='welcome'
-          langSel='en'
-          colorSel='purple'
-          changeOpt={() => console.log('Click change opt')}
-          changeLang={() => console.log('Click change lang')}
-          changeColor={() => console.log('Click change color')}
-        />
-      </header>
-      <main className={styles.main}>
-        <Outlet></Outlet>
-      </main>
-      <FooterMain />
-    </div>
+    <header className={styles.header}>
+      <MenuMain
+        optList={mainMenuList}
+        langList={LangList}
+        colorList={ColorThemeList}
+        optSel='welcome'
+        langSel='en'
+        colorSel='purple'
+        changeOpt={() => console.log('Click change opt')}
+        changeLang={() => console.log('Click change lang')}
+        changeColor={() => console.log('Click change color')}
+      />
+    </header>
+
+
+    <main className={styles.main}>
+      <Outlet></Outlet>
+    </main>
+
+    <FooterMain />
+
   </div>
 );
 
