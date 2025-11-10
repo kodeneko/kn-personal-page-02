@@ -1,0 +1,71 @@
+.cont {
+  background:
+    linear-gradient(to bottom,
+      rgba(18, 13, 21, 1) 0%,
+      rgba(18, 13, 21, .2) 30%,
+      rgba(18, 13, 21, 0) 50%,
+      rgba(18, 13, 21, .2) 70%,
+      rgba(18, 13, 21, 1) 100%),
+    url('../../../../assets/psico-back.png');
+
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  // streetch
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.left {
+  img {
+    border-radius: 0.4rem;
+    width: 19rem;
+    height: 19rem;
+    filter: sepia(1) hue-rotate(250deg);
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 22rem;
+
+  h3 {
+    color: var(--cSecond);
+    text-shadow: var(--shaBlackTxt);
+  }
+
+  p {
+    color: var(--cLight);
+  }
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    padding: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+
+    h3,
+    p {
+      text-align: center;
+    }
+  }
+}

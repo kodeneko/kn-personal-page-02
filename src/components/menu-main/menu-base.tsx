@@ -1,5 +1,6 @@
 import {
   faCircle, faGlobe, faPaintRoller,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { clsx } from 'clsx';
@@ -9,6 +10,8 @@ import styles from './styles.module.less';
 import type { MenuMainProps } from './types';
 
 const MenuBase: React.FC<MenuMainProps> = ({
+  isMobile = false,
+  onClose,
   optList,
   langList,
   colorList,
@@ -22,6 +25,11 @@ const MenuBase: React.FC<MenuMainProps> = ({
   return (
     <div className={styles.cont}>
       <div className={styles.left}>
+        {isMobile &&
+          <div className={styles.close} onClick={onClose}>
+            <FontAwesomeIcon icon={faXmark} />
+          </div>
+        }
         <div className={styles.lang}>
           <FontAwesomeIcon className={styles.icon} icon={faGlobe} />
           <div className={styles.optSet}>

@@ -1,4 +1,9 @@
-.cont {
+.nav {
+  position: relative;
+}
+
+.cont,
+.btnMobile {
   display: flex;
   align-items: center;
   background-color: var(--cDark);
@@ -96,6 +101,29 @@
   }
 }
 
+.btnMobile {
+  cursor: pointer;
+  width: fit-content;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.menuMobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.close {
+  font-size: 1.2rem;
+  color: var(--cSecond);
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
 .colorear(@color) {
   color: @color;
 }
@@ -116,15 +144,27 @@
   .colorear(#319BFF);
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1024px) {
+  .nav {
+    /*
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    left: 0;
+    */
+  }
+}
+
+@media all and (max-width: 1024px) {
   .cont {
     flex-direction: column;
     border-radius: 0;
     gap: 1rem;
-    padding: 1rem 2rem;
   }
 
   .left {
+    width: 100%;
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;

@@ -1,4 +1,6 @@
 
+import './i18n';
+
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 

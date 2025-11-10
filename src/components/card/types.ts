@@ -1,7 +1,7 @@
 import type { MenuOpt } from '../../models/MenuOpt';
 
 type CardProps = {
-  compact: boolean;
+  compact?: boolean;
   pic: string;
   title?: string;
   body?: string;

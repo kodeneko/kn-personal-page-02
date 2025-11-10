@@ -39,44 +39,12 @@ const mainMenuList: MenuOpt[] = [
   optContact,
 ];
 
-const optDesign: MenuOpt = {
-  id: 'portfolio',
-  icon: 'fa-solid fa-brush',
-};
-
-const optFrontend: MenuOpt = {
-  id: 'frontend',
-  icon: 'fa-solid fa-image',
-};
-
-const optBackend: MenuOpt = {
-  id: 'backend',
-  icon: 'fa-solid fa-display',
-};
-
-const optTools: MenuOpt = {
-  id: 'tools',
-  icon: 'fa-solid fa-screwdriver-wrench',
-};
-
-const skillsMenuList: MenuOpt[] = [
-  optDesign,
-  optFrontend,
-  optBackend,
-  optTools,
-];
-
 export {
   mainMenuList,
   optAbout,
-  optBackend,
   optContact,
-  optDesign,
-  optFrontend,
   optPortfolio,
   optServices,
   optSkills,
-  optTools,
   optWelcome,
-  skillsMenuList,
 };

@@ -7,7 +7,7 @@ import styles from './styles.module.less';
 import type { CardProps } from './types';
 
 const Card: React.FC<CardProps> = ({
-  compact,
+  compact = false,
   pic,
   title = '',
   body = '',
@@ -21,11 +21,13 @@ const Card: React.FC<CardProps> = ({
         <p className={styles.body}>{body}</p>
         <div className={styles.actions}>
           {actions.map(a =>
-            <FontAwesomeIcon
-              key={a.id}
-              icon={a.icon as IconName}
-              className={styles.opt}
-            />,
+            <a key={a.id} href={a.path} target='_blank' rel="noreferrer">
+              <FontAwesomeIcon
+                key={a.id}
+                icon={a.icon as IconName}
+                className={styles.opt}
+              />
+            </a>,
           )}
         </div>
       </div>
