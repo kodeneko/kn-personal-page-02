@@ -65,8 +65,8 @@ export default {
       desc: 'Lorem ipsum lorem amet dolor etsme res',
     },
   },
-  form: {
-    title: '',
-    desc: '',
+  contact: {
+    title: 'Contact',
+    desc: 'You can contact me if you have any offer, vacant, suggestion, congratulation or whatever issue',
   },
 };
