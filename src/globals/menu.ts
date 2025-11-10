@@ -26,7 +26,7 @@ const optPortfolio: MenuOpt = {
 };
 
 const optContact: MenuOpt = {
-  id: 'conatct',
+  id: 'contact',
   path: '/contact',
 };
 

@@ -5,6 +5,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { clsx } from 'clsx';
 import type React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.less';
 import type { MenuMainProps } from './types';
@@ -22,6 +24,7 @@ const MenuBase: React.FC<MenuMainProps> = ({
   changeLang,
   changeColor,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={styles.cont}>
       <div className={styles.left}>
@@ -62,13 +65,13 @@ const MenuBase: React.FC<MenuMainProps> = ({
         <ul className={styles.list}>
           {optList.map(o =>
             <li key={o.id}>
-              <a
+              <Link
                 className={clsx(styles.ele, 'labelMd', o.id === optSel && styles.sel)}
-                href={o.path}
+                to={o.path as string}
                 onClick={() => changeOpt(o.id)}
               >
-                {o.id}
-              </a>
+                {t(`labels.${o.id}`)}
+              </Link>
             </li>,
           )}
         </ul>
