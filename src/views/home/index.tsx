@@ -16,6 +16,7 @@ const HomeView: React.FC = () => (
     <ServicesSec />
     <BioSec />
     <SkillsSec />
+    <Ticker labelList={tickerList} />
     <PortfolioSec />
     <ContactSec />
   </>

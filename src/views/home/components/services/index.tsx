@@ -12,7 +12,7 @@ const ServicesSec: React.FC<ServicesSecProps> = () => {
   return (
     <div className={styles.cont}>
       {serviceList.map(s =>
-        <Card key={s.id} body={t(`services.${s.id}`)} {...s} />)
+        <Card compact key={s.id} body={t(`services.${s.id}`)} {...s} />)
       }
     </div>
   );

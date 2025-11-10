@@ -38,7 +38,8 @@ export default {
       tools: 'Tools',
     },
   },
-  porfolio: {
+  portfolio: {
+    title: 'Portfolio',
     example01: {
       title: 'Lorem Ipsum',
       desc: 'Lorem ipsum lorem amet dolor etsme res',
