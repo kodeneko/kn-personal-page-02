@@ -1,6 +1,7 @@
 import React, {
-  useEffect, useLayoutEffect,
-  useRef, useState,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -21,7 +22,7 @@ const PortfolioSec: React.FC<PortfolioSecProps> = () => {
   const [move, setMove] = useState(0);
   const maxRightMovement = useRef(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (refProjects.current && refInner.current) {
       const projectsWidth = refProjects.current.offsetWidth;
       const innerWidth = refInner.current.offsetWidth;
