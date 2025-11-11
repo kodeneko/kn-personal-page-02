@@ -8,13 +8,14 @@ import type { MenuSmallProps } from './types';
 
 const MenuSmall: React.FC<MenuSmallProps> = ({
   menu,
+  optSel,
   selectOpt,
 }) => {
   return (
     <nav className={styles.cont}>
       <ul>
         {menu.map(opt =>
-          <li key={opt.id} className={styles.opt} onClick={() => selectOpt(opt.id)}>
+          <li key={opt.id} className={clsx(styles.opt, optSel === opt.id && styles.act)} onClick={() => selectOpt(opt.id)}>
             <FontAwesomeIcon
               className={styles.icon}
               icon={opt.icon as IconName}

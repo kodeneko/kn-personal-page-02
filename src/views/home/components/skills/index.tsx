@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import pic from '../../../../assets/screen-ia.png';
+import pic from '../../../../assets/screen-ia-crop.png';
 import MenuSmall from '../../../../components/menu-small';
 import { frontendList, skillsMenuList } from '../../../../globals/skills';
 import { useRefSection } from '../../../../hooks/useRefSection';
@@ -15,16 +15,21 @@ const SkillsSec: React.FC<SkillsSecProps> = () => {
   const { t } = useTranslation();
   const ref = useRefSection('skills');
   const [skills, setSkills] = useState<string[]>(frontendList);
-  const handleClick = (id: MenuOpt['id']) => setSkills(
-    skillsMenuList
-      .find(sm => sm.id === id)
-      ?.skills as string[],
-  );
+  const [opt, setOpt] = useState('frontend');
+  const handleClick = (id: MenuOpt['id']) => {
+    setOpt(id);
+    setSkills(
+      skillsMenuList
+        .find(sm => sm.id === id)
+        ?.skills as string[],
+    );
+  };
   return (
     <div className={styles.cont}>
       <div className={styles.inner}>
         <h2 ref={ref} className='h2HeadPac'>{t('skills.title')}</h2>
         <MenuSmall
+          optSel={opt}
           menu={skillsMenuList}
           selectOpt={handleClick}
         />
