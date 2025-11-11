@@ -6,7 +6,9 @@ import type { InputProps } from './types';
 
 const Input: React.FC<InputProps> = (props) => {
   return (
-    <input className={clsx(styles.cont, 'labelMd')} {...props} />
+    props.textarea ?
+      <textarea className={clsx(styles.cont, 'labelMd')} rows={10} {...props}></textarea> :
+      <input className={clsx(styles.cont, 'labelMd')} {...props} />
   );
 };
 

@@ -21,7 +21,7 @@ const ContactSec: React.FC<ContactSecProps> = () => {
         <form onSubmit={handleSubmit}>
           <Input placeholder={t('labels.phName')} />
           <Input placeholder={t('labels.phMail')} />
-          <Input placeholder={t('labels.phMsg')} />
+          <Input placeholder={t('labels.phMsg')} textarea />
           <div className={styles.actions}>
             <Button type='submit'>{t('labels.send')}</Button>
           </div>
