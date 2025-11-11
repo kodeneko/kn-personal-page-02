@@ -2,13 +2,15 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import avatar from '../../../../assets/avatar.png';
+import { useRefSection } from '../../../../hooks/useRefSection';
 import styles from './styles.module.less';
 import type { BioSecProps } from './types';
 
 const BioSec: React.FC<BioSecProps> = () => {
   const { t } = useTranslation();
+  const ref = useRefSection('about');
   return (
-    <div className={styles.cont}>
+    <div ref={ref} className={styles.cont}>
       <div className={styles.inner}>
         <div className={styles.left}>
           <img src={avatar} />

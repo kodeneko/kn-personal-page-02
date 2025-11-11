@@ -3,16 +3,19 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import picMe from '../../../../assets/avatar.png';
+import { useRefSection } from '../../../../hooks/useRefSection';
 import styles from './styles.module.less';
 import type { WelcomeSecProps } from './types';
 
 const WelcomeSec: React.FC<WelcomeSecProps> = () => {
   const { t } = useTranslation();
+  const ref = useRefSection('welcome');
+
   return (
     <>
       <div className={styles.cont}>
         <div className={styles.left}>
-          <div className={clsx(styles.salute, 'h2HeadNun')}>{t('welcome.salute')}</div>
+          <div ref={ref} className={clsx(styles.salute, 'h2HeadNun')}>{t('welcome.salute')}</div>
           <div className={clsx(styles.iam, 'h1Head')}>{t('welcome.iam')}</div>
           <div className={styles.job}>{t('welcome.job')}</div>
           <div className={styles.desc}>{ t('welcome.desc') }</div>

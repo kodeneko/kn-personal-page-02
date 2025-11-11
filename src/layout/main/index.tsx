@@ -5,21 +5,30 @@ import { Outlet } from 'react-router-dom';
 import FooterMain from '../../components/footer-main';
 import MenuMain from '../../components/menu-main';
 import { mainMenuList } from '../../globals/menu';
+import type { AppStore } from '../../models/AppStore';
 import { ColorThemeList } from '../../models/ColorTheme';
 import { LangList, type Langs } from '../../models/Langs';
+import type { MenuOpt } from '../../models/MenuOpt';
 import useAppStore from '../../store/app';
 import styles from './styles.module.less';
 
 const MainLayout: React.FC = () => {
   const { i18n } = useTranslation();
+  const { sections } = useAppStore();
   const [optSel, setOptSel] = useState('welcome');
   const {
     lang, setLang, theme, setTheme,
   } = useAppStore();
+  const handleChangeOpt = (opt: MenuOpt['id']) => {
+    const id = opt as keyof AppStore['sections'];
+    sections[id]?.scrollIntoView({ behavior: 'smooth' });
+    setOptSel(opt);
+  };
   const handleLang = (lang: Langs) => {
     i18n.changeLanguage(lang);
     setLang(lang);
   };
+
   return (
     <div className={styles.mainLayout}>
       <header className={styles.header}>
@@ -30,7 +39,7 @@ const MainLayout: React.FC = () => {
           optSel={optSel}
           langSel={lang}
           colorSel={theme}
-          changeOpt={setOptSel}
+          changeOpt={handleChangeOpt}
           changeLang={handleLang}
           changeColor={setTheme}
         />
