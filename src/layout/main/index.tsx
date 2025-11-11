@@ -16,7 +16,7 @@ const MainLayout: React.FC = () => {
   const {
     lang, setLang, theme, setTheme,
   } = useAppStore();
-  const hanfleLang = (lang: Langs) => {
+  const handleLang = (lang: Langs) => {
     i18n.changeLanguage(lang);
     setLang(lang);
   };
@@ -31,7 +31,7 @@ const MainLayout: React.FC = () => {
           langSel={lang}
           colorSel={theme}
           changeOpt={setOptSel}
-          changeLang={hanfleLang}
+          changeLang={handleLang}
           changeColor={setTheme}
         />
       </header>
