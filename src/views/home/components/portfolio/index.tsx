@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, {
+  useEffect, useLayoutEffect,
+  useRef, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ButtonSq from '../../../../components/button-sq';
@@ -13,9 +16,24 @@ const HALF_CARD = 300 / 2;
 const PortfolioSec: React.FC<PortfolioSecProps> = () => {
   const { t } = useTranslation();
   const ref = useRefSection('portfolio');
+  const refProjects = useRef<HTMLDivElement>(null);
+  const refInner = useRef<HTMLDivElement>(null);
   const [move, setMove] = useState(0);
+  const maxRightMovement = useRef(0);
+
+  useLayoutEffect(() => {
+    if (refProjects.current && refInner.current) {
+      const projectsWidth = refProjects.current.offsetWidth;
+      const innerWidth = refInner.current.offsetWidth;
+      const diff = innerWidth - projectsWidth;
+      maxRightMovement.current = diff;
+    }
+  }, [refProjects.current, refInner.current]);
+
   const handleArrow = (direction: number) => {
     if (direction === -1 && move === 0)
+      return;
+    else if (direction === 1 && move > maxRightMovement.current)
       return;
     setMove(move + direction);
   };
@@ -30,8 +48,8 @@ const PortfolioSec: React.FC<PortfolioSecProps> = () => {
           <ButtonSq onClick={() => handleArrow(1)} icon="fa-solid fa-caret-right" />
         </div>
       </div>
-      <div className={styles.projects}>
-        <div className={styles.inner} style={{ transform: `translateX(${calcMove(move)}px)` }}>
+      <div ref={refProjects} className={styles.projects}>
+        <div ref={refInner} className={styles.inner} style={{ transform: `translateX(${calcMove(move)}px)` }}>
           {portfolioList.map(p =>
             <Card
               key={p.id}
