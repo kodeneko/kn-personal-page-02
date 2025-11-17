@@ -1,7 +1,4 @@
-import React from 'react';
-
 import './button.css';
-
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
@@ -27,7 +24,9 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={['storybook-button',
+        `storybook-button--${size}`,
+        mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
