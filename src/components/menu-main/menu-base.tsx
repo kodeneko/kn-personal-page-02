@@ -1,5 +1,5 @@
 import {
-  faCircle, faGlobe, faPaintRoller,
+  faGlobe,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,13 +16,13 @@ const MenuBase: React.FC<MenuMainProps> = ({
   onClose,
   optList,
   langList,
-  colorList,
+  // colorList,
   optSel,
   langSel = 'es',
-  colorSel = 'purple',
+  // colorSel = 'purple',
   changeOpt,
   changeLang,
-  changeColor,
+  // changeColor,
 }) => {
   const { t } = useTranslation();
   return (
