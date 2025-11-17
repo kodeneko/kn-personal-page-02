@@ -1,5 +1,6 @@
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion as m } from 'motion/react';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -26,7 +27,18 @@ const SkillsSec: React.FC<SkillsSecProps> = () => {
   };
   return (
     <div className={styles.cont}>
-      <div className={styles.inner}>
+      <m.div className={styles.inner}
+        initial={{ opacity: 0, transform: 'translateY(2rem)' }}
+        whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+        viewport={{
+          once: true,
+          amount: 'some',
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 1,
+        }}
+      >
         <h2 ref={ref} className='h2HeadPac'>{t('skills.title')}</h2>
         <MenuSmall
           optSel={opt}
@@ -44,7 +56,7 @@ const SkillsSec: React.FC<SkillsSecProps> = () => {
           </div>
           <img className={styles.pic} src={pic} />
         </div>
-      </div>
+      </m.div>
     </div>
   );
 };

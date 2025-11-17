@@ -1,3 +1,4 @@
+import { motion as m } from 'motion/react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
@@ -29,7 +30,19 @@ const MainLayout: React.FC = () => {
 
   return (
     <div className={styles.mainLayout}>
-      <header className={styles.header}>
+      <m.header
+        className={styles.header}
+        initial={{ opacity: 0, transform: 'translateY(-1rem)' }}
+        whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+        viewport={{
+          once: true,
+          amount: 'some',
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 1,
+        }}
+      >
         <MenuMain
           optList={mainMenuList}
           langList={LangList}
@@ -41,7 +54,7 @@ const MainLayout: React.FC = () => {
           changeLang={handleLang}
           changeColor={setTheme}
         />
-      </header>
+      </m.header>
       <main className={styles.main}>
         <Outlet></Outlet>
       </main>

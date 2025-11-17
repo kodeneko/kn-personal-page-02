@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { motion as m, stagger } from 'motion/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -47,7 +48,19 @@ const ContactSec: React.FC<ContactSecProps> = () => {
 
   return (
     <div className={styles.cont}>
-      <div className={styles.contForm}>
+      <m.div
+        className={styles.contForm}
+        initial={{ opacity: 0, translateX: '2rem' }}
+        whileInView={{ opacity: 1, translateX: '0' }}
+        viewport={{
+          once: true,
+          amount: 'some',
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 1,
+        }}
+      >
         <div className={styles.desc}>
           <h2 ref={ref} className='h2HeadPac'>{ t('contact.title') }</h2>
           <p className={styles.desc}>{ t('contact.desc') }</p>
@@ -62,7 +75,7 @@ const ContactSec: React.FC<ContactSecProps> = () => {
             <Button type='submit'>{t('labels.send')}</Button>
           </div>
         </form>
-      </div>
+      </m.div>
     </div>
   );
 };
