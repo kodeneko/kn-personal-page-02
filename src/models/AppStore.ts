@@ -4,6 +4,7 @@ import type { Langs } from './Langs';
 type AppStore = {
   theme: ColorTheme,
   lang: Langs,
+  optMenu: keyof AppStore['sections'],
   sections: {
     welcome?: HTMLElement,
     services?: HTMLElement,
@@ -16,6 +17,7 @@ type AppStore = {
   setTheme: (color: ColorTheme) => void,
   setLang: (lang: Langs) => void,
   setSection: (name: keyof AppStore['sections'], ele: HTMLElement) => void,
+  setActiveOpt: (name: keyof AppStore['sections']) => void
 };
 
 export type { AppStore };

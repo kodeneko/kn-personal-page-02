@@ -4,12 +4,18 @@ import { useTranslation } from 'react-i18next';
 
 import picMe from '../../../../assets/avatar-real.png';
 import { useRefSection } from '../../../../hooks/useRefSection';
+import type { AppStore } from '../../../../models/AppStore';
+import useAppStore from '../../../../store/app';
 import styles from './styles.module.less';
 import type { WelcomeSecProps } from './types';
 
 const WelcomeSec: React.FC<WelcomeSecProps> = () => {
   const { t } = useTranslation();
+  const { setActiveOpt } = useAppStore();
   const ref = useRefSection('welcome');
+  const handleClickMsg = (id: keyof AppStore['sections']) => {
+    setActiveOpt(id);
+  };
 
   return (
     <>
@@ -23,8 +29,8 @@ const WelcomeSec: React.FC<WelcomeSecProps> = () => {
         <div className={styles.right}>
           <img className={styles.pic} src={picMe} />
           <div className={styles.text}>
-            <button className={clsx(styles.label, styles.t01)}>{ t('welcome.msg01') }</button>
-            <button className={clsx(styles.label, styles.t02)}>{t('welcome.msg02')}</button>
+            <button className={clsx(styles.label, styles.t01)} onClick={() => handleClickMsg('links')}>{ t('welcome.msg01') }</button>
+            <button className={clsx(styles.label, styles.t02)} onClick={() => handleClickMsg('links')}>{t('welcome.msg02')}</button>
           </div>
         </div>
       </div>

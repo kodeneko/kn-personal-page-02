@@ -14,15 +14,13 @@ import styles from './styles.module.less';
 
 const MainLayout: React.FC = () => {
   const { i18n } = useTranslation();
-  const { sections } = useAppStore();
-  const [optSel, setOptSel] = useState('welcome');
+  const { setActiveOpt, optMenu } = useAppStore();
   const {
     lang, setLang, theme, setTheme,
   } = useAppStore();
   const handleChangeOpt = (opt: MenuOpt['id']) => {
     const id = opt as keyof AppStore['sections'];
-    sections[id]?.scrollIntoView({ behavior: 'smooth' });
-    setOptSel(opt);
+    setActiveOpt(id);
   };
   const handleLang = (lang: Langs) => {
     i18n.changeLanguage(lang);
@@ -36,7 +34,7 @@ const MainLayout: React.FC = () => {
           optList={mainMenuList}
           langList={LangList}
           colorList={ColorThemeList}
-          optSel={optSel}
+          optSel={optMenu}
           langSel={lang}
           colorSel={theme}
           changeOpt={handleChangeOpt}
