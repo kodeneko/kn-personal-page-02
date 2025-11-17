@@ -6,22 +6,22 @@ import type { CardProps } from '../components/card/types';
 
 const serviceList: (Omit<CardProps, 'body'> & { id: string })[] = [
   {
-    id: 'diseño',
+    id: 'design',
     compact: true,
     pic: teamPosits,
   },
   {
-    id: 'desarrollo',
+    id: 'development',
     compact: true,
     pic: code,
   },
   {
-    id: 'entrega',
+    id: 'deliveri',
     compact: true,
     pic: computer,
   },
   {
-    id: 'mentoría',
+    id: 'mentoring',
     compact: true,
     pic: meeting,
   },
