@@ -47,7 +47,7 @@ const MenuBase: React.FC<MenuMainProps> = ({
             )}
           </div>
         </div>
-        <div className={styles.color}>
+        {/* <div className={styles.color}>
           <FontAwesomeIcon className={styles.icon} icon={faPaintRoller} />
           <div className={styles.optSet}>
             {colorList.map(c =>
@@ -59,7 +59,7 @@ const MenuBase: React.FC<MenuMainProps> = ({
               />,
             )}
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={styles.right}>
         <ul className={styles.list}>
