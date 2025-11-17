@@ -1,4 +1,8 @@
 export default {
+  error: {
+    required: 'The field is required',
+    mail: 'It must be an e-mail',
+  },
   labels: {
     welcome: 'Welcome',
     services: 'Services',
