@@ -15,6 +15,7 @@ const Routing: React.FC = () => {
         <Route path="/about" element={<HomeView />} />
         <Route path="/skills" element={<HomeView />} />
         <Route path="/portfolio" element={<HomeView />} />
+        <Route path="/links" element={<HomeView />} />
         <Route path="/contact" element={<HomeView />} />
         <Route path="*" element={<NotFoundView />} />
       </Route>

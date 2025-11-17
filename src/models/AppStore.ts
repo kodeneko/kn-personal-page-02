@@ -9,6 +9,7 @@ type AppStore = {
     services?: HTMLElement,
     about?: HTMLElement,
     skills?: HTMLElement,
+    links?: HTMLElement,
     portfolio?: HTMLElement,
     contact?: HTMLElement,
   },

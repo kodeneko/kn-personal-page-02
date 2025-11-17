@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import picMe from '../../../../assets/avatar.png';
+import picMe from '../../../../assets/avatar-real.png';
 import { useRefSection } from '../../../../hooks/useRefSection';
 import styles from './styles.module.less';
 import type { WelcomeSecProps } from './types';
@@ -24,7 +24,7 @@ const WelcomeSec: React.FC<WelcomeSecProps> = () => {
           <img className={styles.pic} src={picMe} />
           <div className={styles.text}>
             <button className={clsx(styles.label, styles.t01)}>{ t('welcome.msg01') }</button>
-            <button className={clsx(styles.label, styles.t02)}>{ t('welcome.msg02') }</button>
+            <button className={clsx(styles.label, styles.t02)}>{t('welcome.msg02')}</button>
           </div>
         </div>
       </div>

@@ -20,6 +20,11 @@ const optSkills: MenuOpt = {
   path: '/skills',
 };
 
+const optLinks: MenuOpt = {
+  id: 'links',
+  path: '/links',
+};
+
 const optPortfolio: MenuOpt = {
   id: 'portfolio',
   path: '/portfolio',
@@ -35,7 +40,8 @@ const mainMenuList: MenuOpt[] = [
   optServices,
   optAbout,
   optSkills,
-  optPortfolio,
+  optLinks,
+  // optPortfolio,
   optContact,
 ];
 
@@ -43,6 +49,7 @@ export {
   mainMenuList,
   optAbout,
   optContact,
+  optLinks,
   optPortfolio,
   optServices,
   optSkills,

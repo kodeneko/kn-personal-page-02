@@ -9,6 +9,7 @@ export default {
     about: 'Acerca de',
     skills: 'Habilidades',
     portfolio: 'Portfolio',
+    links: 'Links',
     contact: 'Contacto',
     phName: 'Nombre...',
     phMail: 'Correo...',
@@ -21,7 +22,7 @@ export default {
     job: 'Desarrollador Web/Móvil | Arquitecto Front-End | UI/UX | Instructor',
     desc: 'Nos encargamos de todo el proceso: diseño, programación y despliegue. Soy una persona multidisciplinar con una década de experiencia en diferentes proyectos.',
     msg01: '¡Contrátame!',
-    msg02: '¡Mira mi portafolio!',
+    msg02: '¡Mira mi trabajo!',
   },
   services: {
     design: 'Diseños aplicando conocimientos de UX/UI',
