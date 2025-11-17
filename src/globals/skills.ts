@@ -7,30 +7,38 @@ const frontendList: string[] = [
   'React',
   'Angular',
   'Vue',
-  'Typescript',
-  'ECMAScript',
-  'HTML5',
-  'CSS3',
   'Redux',
   'Zustand',
   'Pinia',
-  'Framer',
+  'React Native',
+  'Next',
+  'HTML5',
+  'CSS3',
+  'ECMAScript',
+  'Typescript',
 ];
 const backendList: string[] = [
   'NodeJs',
   'Express',
-  'MongoDB',
+  'Mongo',
   'SQL',
+  'Mongoose',
+  'GraphQL',
 ];
 const toolsList: string[] = [
+  'ESLint',
+  'npm',
+  'yarn',
+  'Webpack',
+  'Docker',
+  'NGinx',
   'VSC',
   'Cursor',
-  'Git',
-  'NPM',
+  'Bolt',
 ];
 
 const optDesign: MenuOpt & { skills: string[] } = {
-  id: 'portfolio',
+  id: 'design',
   icon: 'fa-solid fa-brush',
   skills: designList,
 };
@@ -54,9 +62,9 @@ const optTools: MenuOpt & { skills: string[] } = {
 };
 
 const skillsMenuList: (MenuOpt & { skills: string[] })[] = [
-  optDesign,
   optFrontend,
   optBackend,
+  optDesign,
   optTools,
 ];
 

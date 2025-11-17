@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ButtonSq from '../../../../components/button-sq';
 import Card from '../../../../components/card';
 import { portfolioList } from '../../../../globals/portfolio';
+import { useRefSection } from '../../../../hooks/useRefSection';
 import styles from './styles.module.less';
 import type { PortfolioSecProps } from './types';
 
@@ -11,9 +16,25 @@ const HALF_CARD = 300 / 2;
 
 const PortfolioSec: React.FC<PortfolioSecProps> = () => {
   const { t } = useTranslation();
+  const ref = useRefSection('portfolio');
+  const refProjects = useRef<HTMLDivElement>(null);
+  const refInner = useRef<HTMLDivElement>(null);
   const [move, setMove] = useState(0);
+  const maxRightMovement = useRef(0);
+
+  useEffect(() => {
+    if (refProjects.current && refInner.current) {
+      const projectsWidth = refProjects.current.offsetWidth;
+      const innerWidth = refInner.current.offsetWidth;
+      const diff = innerWidth - projectsWidth;
+      maxRightMovement.current = diff;
+    }
+  }, [refProjects.current, refInner.current]);
+
   const handleArrow = (direction: number) => {
     if (direction === -1 && move === 0)
+      return;
+    else if (direction === 1 && move > maxRightMovement.current)
       return;
     setMove(move + direction);
   };
@@ -22,14 +43,14 @@ const PortfolioSec: React.FC<PortfolioSecProps> = () => {
   return (
     <div className={styles.cont}>
       <div className={styles.header}>
-        <h2 className='h2HeadPac'>{ t('portfolio.title') }</h2>
+        <h2 ref={ref} className='h2HeadPac'>{ t('portfolio.title') }</h2>
         <div className={styles.btns}>
           <ButtonSq onClick={() => handleArrow(-1)} icon="fa-solid fa-caret-left" />
           <ButtonSq onClick={() => handleArrow(1)} icon="fa-solid fa-caret-right" />
         </div>
       </div>
-      <div className={styles.projects}>
-        <div className={styles.inner} style={{ transform: `translateX(${calcMove(move)}px)` }}>
+      <div ref={refProjects} className={styles.projects}>
+        <div ref={refInner} className={styles.inner} style={{ transform: `translateX(${calcMove(move)}px)` }}>
           {portfolioList.map(p =>
             <Card
               key={p.id}

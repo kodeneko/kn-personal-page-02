@@ -1,10 +1,9 @@
-import type { User } from '../models/User';
+import axios from 'axios';
 
-export const getUser = async (id: number): Promise<User> => {
-  // Simulación de llamada a API
-  return {
-    id,
-    name: 'Ejemplo Usuario',
-    email: 'usuario@ejemplo.com',
-  };
-};
+import type { Msg } from '../models/Msg';
+
+function sendMail(msg: Msg) {
+  return axios.post<Msg>('http://localhost:3100/contact', msg);
+}
+
+export { sendMail };

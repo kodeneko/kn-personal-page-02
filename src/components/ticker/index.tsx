@@ -6,22 +6,25 @@ import React from 'react';
 import styles from './styles.module.less';
 import type { TickerProps } from './types';
 
+const TickerCont: React.FC<TickerProps> = ({ labelList }) => {
+
+  return (
+    labelList.map(label =>
+      <div key={label} className={styles.tag}>
+        <FontAwesomeIcon className={styles.icon} icon={faAsterisk} />
+        <div className={clsx(styles.label, 'labelLg')}>{label}</div>
+      </div>,
+    )
+  );
+};
+
 const Ticker: React.FC<TickerProps> = ({ labelList }) => {
   return (
     <div className={styles.cont}>
       <div className={styles.mov}>
-        {labelList.map(label =>
-          <div key={label} className={styles.tag}>
-            <FontAwesomeIcon className={styles.icon} icon={faAsterisk} />
-            <div className={clsx(styles.label, 'labelLg')}>{label}</div>
-          </div>,
-        )}
-        {labelList.map(label =>
-          <div key={label} className={styles.tag}>
-            <FontAwesomeIcon className={styles.icon} icon={faAsterisk} />
-            <div className={clsx(styles.label, 'labelLg')}>{label}</div>
-          </div>,
-        )}
+        <TickerCont labelList={labelList} />
+        <TickerCont labelList={labelList} />
+        <TickerCont labelList={labelList} />
       </div>
     </div>
   );
