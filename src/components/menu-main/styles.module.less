@@ -1,0 +1,176 @@
+.nav {
+  position: relative;
+}
+
+.cont,
+.btnMobile {
+  display: flex;
+  align-items: center;
+  background-color: var(--cDark);
+  color: var(--cLight);
+  padding: 0.5rem 1rem;
+  border-radius: 3.2rem;
+  box-shadow: var(--shaBlack);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  .lang {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    .optSet {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+
+      .opt {
+        color: var(--cMain);
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .opt.sel {
+        color: var(--cLight);
+        font-weight: bold;
+      }
+
+      .opt:hover:not(.opt.sel) {
+        transform: translate(0.05rem, -0.05rem);
+      }
+    }
+  }
+
+  .color {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    .optSet {
+      display: flex;
+      align-items: center;
+
+      .opt {
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .opt:hover {
+        transform: translate(0.05rem, -0.05rem);
+      }
+    }
+  }
+}
+
+.right {
+  flex-grow: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-transform: uppercase;
+
+    .ele {
+      color: var(--cLight);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ele.sel,
+    .ele:hover {
+      color: var(--cSecond);
+    }
+  }
+}
+
+.btnMobile {
+  cursor: pointer;
+  width: fit-content;
+  position: fixed;
+  z-index: 10;
+  top: 1rem;
+  right: 1rem;
+}
+
+.menuMobile {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.close {
+  font-size: 1.2rem;
+  color: var(--cSecond);
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.colorear(@color) {
+  color: @color;
+}
+
+.purple {
+  .colorear(#B03DFD);
+}
+
+.orange {
+  .colorear(#FA7E02);
+}
+
+.green {
+  .colorear(#18D968);
+}
+
+.blue {
+  .colorear(#319BFF);
+}
+
+
+@media all and (max-width: 1024px) {
+  .cont {
+    flex-direction: column;
+    border-radius: 0;
+    gap: 1rem;
+  }
+
+  .left {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .right {
+    justify-content: center;
+    width: 100%;
+
+    .list {
+      width: 100%;
+      padding: 2rem;
+      border-top: 0.1rem solid var(--cLight);
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

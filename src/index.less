@@ -1,0 +1,79 @@
+@import '../node_modules/reset-css/less/reset.less';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap');
+
+:root {
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+
+  --cMain: rgb(176, 61, 253);
+  --cSecond: rgb(255, 86, 148);
+  --cDark: rgb(18, 13, 21);
+  --cDarkTrans: rgba(18, 13, 21, .8);
+  --cLight: rgb(249, 246, 249);
+  --shaBlack: 0.2rem 0.2rem 0.3rem 0.1rem rgba(0, 0, 0, .25);
+  --shaBlackTxt: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, .25);
+
+  --wDesktop: 1200px;
+  --wTablet: 1024px;
+  --wMobile: 800px;
+
+
+  background-image: linear-gradient(to bottom,
+      rgba(176, 61, 253, .5) 0%,
+      rgba(176, 61, 253, 0) 10%,
+      rgba(176, 61, 253, 0) 90%,
+      rgba(176, 61, 253, .5) 100%), url('./assets/paper-purple.jpg');
+
+  // background-image: url('./assets/paper-purple.jpg');
+  background-size: 70%;
+  background-repeat: repeat;
+  color: var(--cDark);
+}
+
+a {
+  color: var(--cDark);
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.4rem;
+}
+
+.h1Head {
+  font-family: "Pacifico", sans-serif;
+  font-size: 3.6rem;
+  text-shadow: var(--shaBlackTxt);
+}
+
+.h2HeadPac {
+  font-family: "Pacifico", sans-serif;
+  font-size: 2.9rem;
+  text-shadow: var(--shaBlackTxt);
+}
+
+.h2HeadNun {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.6rem;
+}
+
+.h3Head {
+  font-family: "Pacifico", sans-serif;
+  font-size: 1rem;
+  text-shadow: var(--shaBlackTxt);
+}
+
+.labelMd {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.labelLg {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+}
+
+.labelLgBold {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

@@ -1,0 +1,27 @@
+.outer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.cont {
+  background: transparent;
+  border: none;
+  border-bottom: 0.2rem solid var(--cSecond);
+  outline: none;
+  color: var(--cLight);
+  padding: 0 0.3rem;
+  box-shadow: var(--shaBlack);
+}
+
+.cont::placeholder {
+  color: var(--cSecond)
+}
+
+.hint {
+  color: var(--cSecond);
+  text-align: right;
+  font-style: italic;
+  height: 1rem;
+}

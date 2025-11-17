@@ -1,0 +1,48 @@
+.cont {
+  width: 100%;
+  background-color: var(--cDark);
+  color: var(--cLight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3.2rem;
+  box-shadow: var(--shaBlack);
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+.opt {
+  padding: 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  .icon {
+    font-size: 1.2rem;
+    transition: all 0.2s;
+  }
+
+  .label {
+    transition: all 0.2s;
+  }
+}
+
+.opt:hover,
+.opt.act {
+
+  .icon,
+  .label {
+    color: var(--cSecond)
+  }
+}
+
+@media all and (max-width: 800px) {
+  .opt .label {
+    display: none
+  }
+}
